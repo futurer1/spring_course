@@ -7,9 +7,27 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="myPet"
-          class="com.mikhail.spring.spring_introduction.Dog">
+    <context:property-placeholder location="classpath:myApp.properties"/>
 
+    <bean id="myPet"
+          class="com.mikhail.spring.spring_introduction.Cat">
     </bean>
 
-</beans>
+    <bean id="myPerson"
+          class="com.mikhail.spring.spring_introduction.Person">
+<!--            внедрение зависимостей через конструктор-->
+<!--        <constructor-arg ref="myPet"/>-->
+
+<!--            внедрение зависимостей через сеттеры-->
+            <property name="pet" ref="myPet"/>
+
+<!--            присвоение значений через сеттеры-->
+<!--            <property name="name" value="Vasya"/>-->
+<!--            <property name="age" value="25"/>-->
+
+<!--                присвоение через отдельный файл со свойствами-->
+                <property name="name" value="${person.name}"/>
+                <property name="age" value="${person.age}"/>
+            </bean>
+
+        </beans>
