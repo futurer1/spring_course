@@ -1,4 +1,4 @@
-package aop.after;
+package aop.around;
 
 import org.springframework.stereotype.Component;
 
@@ -18,10 +18,13 @@ public class University {
         students.add(st3);
     }
 
+    /**
+     * @return Будет поймано исключение в методе через Advice типа @Around
+     */
     public List<Student> getStudents() {
         System.out.println("Начало работы метода");
 
-        //System.out.println(students.get(3)); // студента под этим индексом нет
+        System.out.println(students.get(3)); // студента под этим индексом нет, будет исключение IndexOutOfBoundsException
 
         System.out.println("Inform from getStudents(): ");
         System.out.println(students);
