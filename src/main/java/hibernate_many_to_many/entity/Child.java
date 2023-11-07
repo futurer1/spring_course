@@ -46,8 +46,6 @@ public class Child {
             sections = new ArrayList<>();
         }
         sections.add(section);
-        //section.addChild(this);
-
     }
 
     public int getId() {

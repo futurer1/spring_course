@@ -40,7 +40,6 @@ public class Section {
             children = new ArrayList<>();
         }
         children.add(child);
-
     }
 
     @Override
